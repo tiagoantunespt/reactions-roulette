@@ -1,0 +1,220 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.footer .container{
+    margin-top: 14px;
+    padding-left: 56px;
+}
+.jumbotron{
+    background-color: #d9534f;
+    margin-bottom: 0px;
+}
+.jumbotron h1{
+    color: #fff;
+    font-size: 98px;
+    line-height: 110px;
+    text-shadow: 8px 8px rgba(0, 0, 0, 0.24);
+    margin-bottom: 20px;
+}
+.enter-form{
+    width: 360px;
+    margin: 0 auto;
+}
+.enter-form p input{
+    height: 42px;
+    width: 175px;
+}
+.enter-form p a{
+    vertical-align: inherit;
+}
+.rules{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.rules h3{
+    text-transform: uppercase;
+}
+.sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    right: -1px;
+    z-index: 15;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+    overflow-y: hidden; 
+    width: 271px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#localVideo{
+    margin-left: -5px;
+}
+#input_msg{
+    position: fixed;
+    bottom: 10px;
+}
+#input_msg input{
+    width: 260px;
+}
+.tab-content{
+    height: -moz-calc(100% - 335px);
+    height: -webkit-calc(100% - 335px);
+    height: calc(100% - 335px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+/* Sidebar navigation */
+.nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    color: #fff;
+    background-color: #428bca;
+}
+.main {
+    padding: 20px 300px 20px 30px;
+}
+.main .page-header {
+    margin-top: 0;
+}
+#video_modal{
+    background-color: black;
+}
+#room{
+    padding-top: 48px;
+}
+#remotesVideos video{
+    height: 280px;
+    margin-right: 10px;
+}
+#remotesVideos video::after{
+    content: 'screenshot';
+}
+#remotesVideos video.selected{
+    border: 4px solid #d9534f;
+}
+#remotesVideos video.selected::after{
+    content: "\e046";
+}
+#remotesVideos{
+    text-align: center;
+}
+.center-text{
+    text-align: center;
+}
+.push-left{
+    float: left;
+}
+.push-right{
+    float: right;
+}
+.participant-button{
+    margin-right: 10px;
+    margin-top: 3px;
+}
+.participants-container{
+    margin-left: 10px;
+}
+.room-header{
+    height: 49px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.room-header h1 {
+    *border-bottom: 0px;
+}
+
+#side_bar_tabs{
+    margin: 1em 0 1em;
+}
+#side_bar_tabs li.active a{
+    background-color: #428bca;
+    color: #ffffff;
+}
+#photos p img{
+    width: 90%;
+    margin: 0 auto 0 auto;
+    display: block;
+}
+body{
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.navbar-inverse {
+    background-color: #313848;
+}
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+h2.how-to {
+    margin-bottom: 5px;
+    font-size: 40px;
+    font-weight: 40px;
+    color: #333;
+    text-transform: uppercase;
+}
+a.enter-room{
+    background-color: #313848;
+    border-radius: 3px;
+    border: 0px;
+}
+#cam-warning{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    color: #b7c0c3;
+    line-height: 1.4em;
+    text-align: center;
+}
+#cam-warning p{
+    font-size: 25px;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: #d9534f;
+}
+.navbar{
+    padding-right: 15px;
+}
+div.take-photo-cont{
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+}
+div.take-photo-cont button{
+    padding: 3px 7px;
+    position: absolute;
+    top: 7px;
+    left: -47px;
+}
+#watch_victim_video_cont{
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+}
+.navbar-fixed-top{
+    z-index: 20;
+}
+.share-cont{
+    margin-right: 8px;
+}

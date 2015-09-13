@@ -1,0 +1,5 @@
+app/config/config.js
+config/*
+node_modules/*
+app/bower_components/*
+notes

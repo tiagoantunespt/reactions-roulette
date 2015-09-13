@@ -1,0 +1,99 @@
+<div id="cam-warning" ng-hide="acceptedCamReq">
+    <p>
+        You must accept cam sharing request 
+</p>
+</div>
+<div id="room" ng-show="acceptedCamReq">
+    <canvas id="canvas" class="hide"></canvas>
+    <div id="watch_victim_video_cont" ng-show="roulette && !imVictim">
+        <video width="320" ng-src="{{trustVideoSrc(videoSrc)}}" id="victim_video" ng-show="watchingVictimVideo">
+            <source ng-src="{{trustVideoSrc(videoSrc)}}" type="video/mp4">
+        </video>
+        <div>
+            <button class="btn btn-primary btn-danger" id="watch_victim_video" ng-click="watchVictimVideo()">
+                <span class="glyphicon glyphicon glyphicon-film"></span>
+                {{watchingVictimVideo && 'hide' || 'show'}} victim's video
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="sidebar">
+            <!--<ul class="nav nav-sidebar">
+                <li class="active"><a href="javascript:void(0)">Me</a></li>
+            </ul>
+            <video height="120" id="localVideo"></video>-->
+            <video height="203" id="localVideo"></video>
+            <ul class="nav nav-tabs" role="tablist" id="side_bar_tabs">
+              <li class="active"><a href="#chat" role="tab" data-toggle="tab">Chat</a></li>
+              <li><a href="#photos" role="tab" data-toggle="tab">Photos</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active messages-holder" id="chat">
+                    <div>
+                        <p ng-repeat="message in messages">
+                            <span>{{message.time | date:"h:mm:ss"}}</span>
+                            <span><b>{{message.from}}:</b></span><br>
+                            <span>{{message.message}}</span>
+                        </p>
+                    </div>
+                    <div id="input_msg">
+                        <div ng-controller="MessageController">
+                            <form ng-submit="form.submitTheForm()">
+                                <input type="text" class="form-control" ng-model="form.message" placeholder="type a message...">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="photos">
+                    <div>
+                        <p ng-repeat="photo in photos">
+                            {{photo.userPhoto}} by {{photo.tookBy}}
+                            <img ng-src="{{photo.src}}">
+                        </p>
+                        <p ng-hide="photos.length > 0">No photos yet.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="main">
+            <div class="room-header">
+                <h1 class="page-header push-left">#{{room}}</h1>
+                <div class="push-right">
+                    <button id="roulette_but" ng-show="users.length > 1" ng-disabled="roulette" type="button" ng-click="startRoulette()" class="btn btn-primary btn-danger">
+                    Start roulette!
+                    </button>
+                </div>
+                <div class="push-right share-cont">
+                    <input type="hidden" ng-model="url"/>
+                    <button ui-zeroclip zeroclip-copied="copied=true" zeroclip-model="url" ng-click="copiedUrl()" type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-share"></span>
+                        {{users.length == 1 ? 'copy url to clipboard and share with someone to start roulette!' : ''}}
+                    </button>
+                </div>
+                <div class="push-left participants-container">
+                    <div class="btn-group" ng-repeat="user in users">
+                        <button class="btn btn-primary participant-button" ng-class="{'btn-danger': victimVidid == user.video_id}" id="user_{{user.video_id}}" type="button">
+                          {{user.username}} <span class="badge">{{victimVidid == user.video_id ? 'watching video' : user.watched_videos + ' videos watched'}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="remotesVideos"></div>
+        </div>
+    </div>
+    <div id="video_modal" class="modal fade" tabindex="-1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body center-text" id="video-container">
+                    <video width="640" ng-src="{{trustVideoSrc(video)}}" src="{{trustVideoSrc(video)}}" height="480" id="video_elem_modal" autoplay>
+                        <source ng-src="{{trustVideoSrc(video)}}" src="{{trustVideoSrc(video)}}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="modal-footer center-text">
+                    <button type="button" class="btn btn-default" id="close_video_modal_but" data-dismiss="modal">Close video because i'm a pussy!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

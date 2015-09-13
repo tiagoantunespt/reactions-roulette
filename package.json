@@ -1,0 +1,11 @@
+{
+  "name": "roulette",
+  "version": "0.1.0",
+  "dependencies": {
+    "express": "latest",
+    "config": "latest"
+  },
+  "engines": {
+    "node": ">=0.12"
+  }
+}

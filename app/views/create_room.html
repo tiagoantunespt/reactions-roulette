@@ -1,0 +1,40 @@
+<div class="jumbotron" id="user_form">
+  <div class="container" style="text-align: center;">
+    <h1>Welcome!</h1>
+    <p>Insert your name to create a room which name will be randomly generated. You can invite more people giving them the url when you are in the room chat. And remember, we are not responsible for the videos you will watch!</p>
+    <div>
+        <form ng-submit="form.createR()">
+            <div class="enter-form">
+                <p>
+                    <input type="text" ng-model="form.username" placeholder="Your name" style="text-align: center;"/>
+                    <a class="enter-room btn btn-primary btn-lg" ng-click="form.createR()" role="button">Enter room</a>
+                </p>    
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+<div class="rules">
+    <div class="container" style="text-align: center;">
+        <h2 class="how-to">How you play this game</h2>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Challenge!</h3>
+                <p>Just share the room url with your friends</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Roulette!</h3>
+                <p>In each roulette one participant will be choosen as the victim and he must see a video</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Catch the reaction!</h3>
+                <p>The participants not selected to see the video will watch the victim reaction</p>
+            </div>
+            <div class="col-sm-12">
+                <h3>Survive!</h3>
+                <p>The participant who wins is the one who saw more videos and did not vomit</p>
+            </div>
+        </div>
+    </div>
+</div>
